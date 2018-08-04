@@ -13,7 +13,7 @@ before_install:
 - bash ./utilities/travis_setup.sh
 - export PATH="/tmp/texlive/bin/x86_64-linux:$PATH"
 script:
-- latexmk manuscript
+- latexmk -pdf -interaction=nonstopmode manuscript
 deploy:
   provider: releases
   api_key:
