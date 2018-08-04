@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/skulumani/2016_AAS_manuscript.svg?branch=master)](https://travis-ci.org/skulumani/2016_AAS_manuscript)
+
 ## 2016 AAS manuscript
 
 This is the publication for the 2016 AAS conference in Long Beach, CA
