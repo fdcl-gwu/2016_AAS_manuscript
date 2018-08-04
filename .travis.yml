@@ -21,6 +21,6 @@ deploy:
   file: manuscript.pdf
   skip_cleanup: true
   on:
-    repo: skulumani/2016_aas_manuscript
+    repo: skulumani/2016_AAS_manuscript
     tags: true
     all_branches: true
