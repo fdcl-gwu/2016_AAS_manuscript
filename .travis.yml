@@ -1,0 +1,21 @@
+sudo: false
+language: generic
+matrix:
+  include:
+  - os: linux
+git:
+  depth: false
+cache:
+  directories:
+  - "/tmp/texlive"
+  - "$HOME/.texlive"
+before_install:
+- bash ./utilities/travis_setup.sh
+- export PATH="/tmp/texlive/bin/x86_64-linux:$PATH"
+script:
+- latexmk manuscript
+deploy:
+  provider: releases
+  api_key:
+    secure: xV7NjBXKzJKOjHeUJ7xi0/0AaiD+RxLImU/o7qCHCgQXWJSDFRHfqv+iFDhkg8+wI08BwZbkZCbcK65OMIBVnF5ydw1J38kf59sHJCEl16ZA2/YZcQNgZFOCPHtLlMX9XVKDAcMtu15/c7BY1+J4jSONFtAckBV4s36GIa2zqP8C2f+SbSXY2PWBkfCGZSCAIKQzYvarrYO6hDWg9Klcs8eTOgkY2VOim+DRbGj7dpv38t7iTT53PlG1a+7ksCfmQclz2q9mmK3nns/GiFO96IOz5ui+0ylRGVvcPqrAlnd9vC8FDlQ6doGpPs3dgKP14v0DNFB1y1Q+udn+HI3Z3aPWsgPJ6xnnD/AaHPtLZwCZP6ovEXBWOux05/NXm5xL+CBnGsOY6BFynhSpaKdPdM05W/RJ1oN0BTZl1kfqND/ttMuyJmf9fPZVxwPDPsBIhXACuywazBimo0sGR2+vigxPuvwaV5E0IMsELw/1d017sOiw5YxtclRoTzNbmM20sW9+tc/kZg2UDEHMC2t6+y3q1s0zugQAlLS9djahlO79oGdNjIuMi4Ja1abDNm7WjcfPr3W6IhsuhT8cz/mdkJX4BuLehJuTmqF+sUsrhJVr61hi8Uk80LNDxQNxJH09lgZRwwU746+vGFL1+a7sYxgqCnparoMgEDfsMoW0Feg=
+  file: manuscript.pdf
